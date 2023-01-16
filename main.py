@@ -46,11 +46,10 @@ while game:
         score.game_over()
 
     #body collision
-    for section in snake.sections:
-        if section != snake.head:
-            if snake.head.distance(section) < 10:
-                game = False
-                score.game_over()
+    for section in snake.sections[1:]:
+        if snake.head.distance(section) < 10:
+            game = False
+            score.game_over()
 
 
 screen.exitonclick()
