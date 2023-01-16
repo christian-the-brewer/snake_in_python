@@ -34,20 +34,31 @@ def move_snake():
         new_x = snake[section_number - 1].xcor()
         new_y = snake[section_number - 1].ycor()
         snake[section_number].goto(new_x, new_y)
+    screen.update()
 
 while game:
     screen.update()
     time.sleep(0.1)
     head.fd(20)
+    move_snake()
     head.right(90)
+    move_snake()
     head.fd(20)
+    move_snake()
     head.fd(20)
+    move_snake()
     head.fd(20)
+    move_snake()
     head.fd(20)
+    move_snake()
     head.right(90)
+    move_snake()
     head.fd(20)
+    move_snake()
     head.fd(20)
+    move_snake()
     head.fd(20)
+    move_snake()
 
 #creates new segment
 def grow_snake():
