@@ -13,7 +13,6 @@ starting_size = 3
 
 #snake body
 snake = []
-head = snake[0]
 
 #game on bool
 game = True
@@ -28,14 +27,27 @@ for _ in range(0,starting_size):
     starting_x -= 20
     snake.append(new_section)
 
+head = snake[0]
+
+def move_snake():
+    for section_number in range(len(snake) - 1, 0, -1):
+        new_x = snake[section_number - 1].xcor()
+        new_y = snake[section_number - 1].ycor()
+        snake[section_number].goto(new_x, new_y)
 
 while game:
     screen.update()
-    time.sleep(.1)
-    for section in snake:
-        section.fd(20)
-
-
+    time.sleep(0.1)
+    head.fd(20)
+    head.right(90)
+    head.fd(20)
+    head.fd(20)
+    head.fd(20)
+    head.fd(20)
+    head.right(90)
+    head.fd(20)
+    head.fd(20)
+    head.fd(20)
 
 #creates new segment
 def grow_snake():
