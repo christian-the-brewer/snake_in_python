@@ -4,6 +4,9 @@ from turtle import Turtle
 #starting size of snake
 starting_size = 3
 
+#movement speed(distance)
+MOVEMENT = 20
+
 class Snake:
     def __init__(self):
         self.sections = []
@@ -24,4 +27,16 @@ class Snake:
             new_x = self.sections[section_number - 1].xcor()
             new_y = self.sections[section_number - 1].ycor()
             self.sections[section_number].goto(new_x, new_y)
-        self.sections[0].fd(20)
+        self.sections[0].fd(MOVEMENT)
+
+    def up(self):
+        self.sections[0].seth(90)
+
+    def down(self):
+        self.sections[0].seth(270)
+
+    def left(self):
+        self.sections[0].seth(180)
+
+    def right(self):
+        self.sections[0].seth(0)
