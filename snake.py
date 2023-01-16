@@ -11,6 +11,7 @@ class Snake:
     def __init__(self):
         self.sections = []
         self.create_snake()
+        self.head = self.sections[0]
 
     def create_snake(self):
         starting_x = 0
@@ -27,16 +28,21 @@ class Snake:
             new_x = self.sections[section_number - 1].xcor()
             new_y = self.sections[section_number - 1].ycor()
             self.sections[section_number].goto(new_x, new_y)
-        self.sections[0].fd(MOVEMENT)
+        self.head.fd(MOVEMENT)
 
+    #directional controls
     def up(self):
-        self.sections[0].seth(90)
+        if self.head.heading() != 270:
+            self.head.seth(90)
 
     def down(self):
-        self.sections[0].seth(270)
+        if self.head.heading() != 90:
+            self.head.seth(270)
 
     def left(self):
-        self.sections[0].seth(180)
+        if self.head.heading() != 0:
+            self.head.seth(180)
 
     def right(self):
-        self.sections[0].seth(0)
+        if self.head.heading() != 180:
+            self.head.seth(0)
