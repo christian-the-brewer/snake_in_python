@@ -18,6 +18,6 @@ There are seven configurable variables in the game, which can be found in the co
 This game imports three libraries:
 * **[turtle](https://docs.python.org/3/library/turtle.html#turtle.write)**: Used for creating game screen and all animations.
 * **[random](https://docs.python.org/3/library/random.html?highlight=random#module-random)**: Used to generate pseudo- random numbers to spawn food.
-***[time](https://docs.python.org/3/library/time.html?highlight=time#module-time)**: Used to set a framerate.
+* **[time](https://docs.python.org/3/library/time.html?highlight=time#module-time)**: Used to set a framerate.
 
 
