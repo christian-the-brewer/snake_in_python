@@ -1,12 +1,12 @@
 from turtle import Turtle
-FONT = ("Arias", 14, "normal")
+from config import FONT, BOARD
 
 class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.penup()
         self.hideturtle()
-        self.goto(0, 275)
+        self.goto(0, (BOARD / 2) - 25)
         self.color("white")
         self.points = 0
         self.write(f"Score: {self.points}", align="center", font=FONT)

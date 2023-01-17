@@ -2,7 +2,7 @@
 from turtle import Turtle
 
 #starting size of snake
-starting_size = 3
+STARTING_SIZE = 3
 
 #movement speed(distance)
 MOVEMENT = 20
@@ -17,7 +17,7 @@ class Snake:
     def create_snake(self):
         starting_x = 0
         starting_x_y = (starting_x, 0)
-        for _ in range(0,starting_size):
+        for _ in range(0,STARTING_SIZE):
             self.add_section(starting_x_y)
             starting_x -= 20
             

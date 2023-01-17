@@ -3,10 +3,11 @@ from turtle import Turtle, Screen
 from snake import Snake
 from food import Food
 from score import Score
+from config import SPEED, BOARD, BOUNDRY
 import time
 
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=BOARD, height=BOARD)
 screen.bgcolor("black")
 screen.title("Snake")
 screen.tracer(0)
@@ -30,18 +31,19 @@ game = True
 
 while game:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(SPEED)
     snake.move()
 
     #detecting collisions
     #food collision
+
     if snake.head.distance(food) < 15:
         food.respawn()
         score.increase_score()
         snake.extend_snake()
 
     #wall collision
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 290 or snake.head.ycor() < -280:
+    if snake.head.xcor() > BOUNDRY or snake.head.xcor() < -BOUNDRY or snake.head.ycor() > BOUNDRY or snake.head.ycor() < -BOUNDRY:
         game = False
         score.game_over()
 

@@ -1,5 +1,7 @@
 from turtle import Turtle
+from config import FOOD_ZONE
 import random
+
 
 class Food(Turtle):
     def __init__(self):
@@ -9,7 +11,7 @@ class Food(Turtle):
         self.shapesize(stretch_len=0.5, stretch_wid=0.5)
         self.color("red")
         self.speed("fastest")
-        self.goto(random.randint(-260, 260), random.randint(-260, 260))
+        self.goto(random.randint(-FOOD_ZONE, FOOD_ZONE), random.randint(-FOOD_ZONE, FOOD_ZONE))
 
     def respawn(self):
-        self.goto(random.randint(-260, 260), random.randint(-260, 260))
+        self.goto(random.randint(-FOOD_ZONE, FOOD_ZONE), random.randint(-FOOD_ZONE, FOOD_ZONE))
