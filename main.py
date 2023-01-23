@@ -44,13 +44,13 @@ while game:
 
     #wall collision
     if snake.head.xcor() > BOUNDRY or snake.head.xcor() < -BOUNDRY or snake.head.ycor() > BOUNDRY or snake.head.ycor() < -BOUNDRY:
-        game = False
+        snake.reset_snake()
         score.game_over()
 
     #body collision
     for section in snake.sections[1:]:
         if snake.head.distance(section) < 10:
-            game = False
+            snake.reset_snake()
             score.game_over()
 
 

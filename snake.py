@@ -52,7 +52,7 @@ class Snake:
     def extend_snake(self):
         self.add_section(self.tail.position())
 
-    def reset(self):
+    def reset_snake(self):
         for section in self.sections:
             section.goto(600, 600)
         self.sections.clear()
