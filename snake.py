@@ -1,11 +1,6 @@
 #imports
 from turtle import Turtle
-
-#starting size of snake
-STARTING_SIZE = 3
-
-#movement speed(distance)
-MOVEMENT = 20
+from config import STARTING_SIZE, MOVEMENT
 
 class Snake:
     def __init__(self):
@@ -56,4 +51,12 @@ class Snake:
 
     def extend_snake(self):
         self.add_section(self.tail.position())
+
+    def reset(self):
+        for section in self.sections:
+            section.goto(600, 600)
+        self.sections.clear()
+        self.create_snake()
+        self.head = self.sections[0]
+        self.tail = self.sections[-1]
     
